@@ -1,0 +1,39 @@
+
+
+# We writing a linear search program.
+
+l = [8,2,6,5,7,3,9,1,0]
+
+i=0
+x=9
+while i < len(l):
+    j = 0
+    while j < i:
+        if l[i]<l[j]:
+            #swap operation
+            temp = l[i]
+            l[i]=l[j]
+            l[j]=temp
+        j=j+1
+    i=i+1
+print ('after:' , l)
+## List is sorted now we will do the binary search
+
+print (len(l))
+low = 0
+high = 8
+
+while low < len(l):
+    mid = int((low + high) / 2)
+    print ('Middle Position = ', mid)
+    if x == l[mid]:
+        print (x, 'is at', mid,'position')
+        exit()
+    if x < l[mid]:
+        low = low
+        high = mid - 1
+    else:
+        low=mid+1
+        high = high
+    i=i+1
+
